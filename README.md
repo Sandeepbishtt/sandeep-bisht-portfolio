@@ -52,24 +52,24 @@ This repo includes [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml
    git push -u origin main
    ```
 
-3. **Enable Pages (required — fixes deploy 404):**
+3. **Enable Pages:**
    - Open [Settings → Pages](https://github.com/Sandeepbishtt/sandeep-bisht-portfolio/settings/pages)
-   - Under **Build and deployment**, set **Source** to **GitHub Actions** (not “Deploy from a branch”)
-   - Save if prompted
+   - **Build and deployment → Source:** **Deploy from a branch**
+   - **Branch:** `gh-pages` → folder **`/ (root)`** → Save
 
-4. **Re-run deploy:** Actions → **Deploy to GitHub Pages** → **Re-run all jobs** on the latest run (or push any commit to `main`).
+   > If you prefer the newer GitHub Actions source instead, switch the workflow back to `deploy-pages` and set Source to **GitHub Actions**. The current workflow publishes the built `dist/` folder to the `gh-pages` branch automatically.
 
-5. After the workflow completes, the site is live at **https://sandeepbishtt.github.io/sandeep-bisht-portfolio/**.
+4. After the workflow completes, the site is live at **https://sandeepbishtt.github.io/sandeep-bisht-portfolio/**.
 
 ### Troubleshooting
 
-**`deploy-pages` fails with `HttpError: Not Found` / “Ensure GitHub Pages has been enabled”**
+**`deploy-pages` / `HttpError: Not Found`**
 
-The build succeeded but Pages is not turned on yet. Complete step 3 above, then re-run the workflow. Do not re-run an old failed run from before Pages was enabled — trigger a fresh run after saving Settings.
+GitHub Actions Pages was not enabled. This repo uses the **`gh-pages` branch** method instead — set Pages source to **Deploy from a branch → gh-pages → / (root)**.
 
-**Private repository**
+**Site still 404 after green workflow**
 
-GitHub Pages works from private repos on free accounts; the published site is still public at the `github.io` URL.
+Wait 2–3 minutes, then hard-refresh. Confirm Pages settings show branch `gh-pages` and the latest workflow run succeeded.
 
 ### Re-deploy
 
