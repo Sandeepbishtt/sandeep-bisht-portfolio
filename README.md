@@ -3,7 +3,9 @@
 
 Animated portfolio website built with React, TypeScript, Vite, Motion, and Tailwind CSS.
 
-**Live site:** [https://sandeepbishtt.github.io](https://sandeepbishtt.github.io) *(after GitHub Pages deploy)*
+**Repository:** [github.com/Sandeepbishtt/sandeep-bisht-portfolio](https://github.com/Sandeepbishtt/sandeep-bisht-portfolio)
+
+**Live site:** [https://sandeepbishtt.github.io/sandeep-bisht-portfolio/](https://sandeepbishtt.github.io/sandeep-bisht-portfolio/) *(after GitHub Pages deploy)*
 
 ## Local development
 
@@ -12,7 +14,13 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173).
+Open [http://localhost:5173/sandeep-bisht-portfolio/](http://localhost:5173/sandeep-bisht-portfolio/).
+
+For root-path local dev:
+
+```bash
+VITE_BASE_PATH=/ npm run dev
+```
 
 ## Production build
 
@@ -36,18 +44,17 @@ This repo includes [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml
    ```bash
    ./scripts/publish-to-github.sh
    ```
-   This creates [`Sandeepbishtt.github.io`](https://github.com/Sandeepbishtt/Sandeepbishtt.github.io) and pushes `main`.
 
    Or manually:
    ```bash
-   git remote add origin git@github.com:Sandeepbishtt/Sandeepbishtt.github.io.git
+   git remote add origin https://github.com/Sandeepbishtt/sandeep-bisht-portfolio.git
    git branch -M main
    git push -u origin main
    ```
 
 3. **Enable Pages:** Repo **Settings → Pages → Build and deployment → Source:** select **GitHub Actions**.
 
-4. After the workflow completes, the site is live at **https://sandeepbishtt.github.io**.
+4. After the workflow completes, the site is live at **https://sandeepbishtt.github.io/sandeep-bisht-portfolio/**.
 
 ### Re-deploy
 

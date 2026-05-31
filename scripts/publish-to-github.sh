@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO="Sandeepbishtt.github.io"
+REPO="sandeep-bisht-portfolio"
 GITHUB_USER="Sandeepbishtt"
 
-echo "Publishing portfolio to https://${GITHUB_USER}.github.io"
+echo "Publishing portfolio to https://${GITHUB_USER}.github.io/${REPO}/"
 echo ""
 
 if ! command -v gh >/dev/null 2>&1; then
@@ -18,10 +18,12 @@ if ! gh auth status >/dev/null 2>&1; then
   exit 1
 fi
 
+REMOTE_URL="https://github.com/${GITHUB_USER}/${REPO}.git"
+
 if git remote get-url origin >/dev/null 2>&1; then
-  git remote set-url origin "git@github.com:${GITHUB_USER}/${REPO}.git"
+  git remote set-url origin "${REMOTE_URL}"
 else
-  git remote add origin "git@github.com:${GITHUB_USER}/${REPO}.git"
+  git remote add origin "${REMOTE_URL}"
 fi
 
 if gh repo view "${GITHUB_USER}/${REPO}" >/dev/null 2>&1; then
@@ -35,9 +37,9 @@ git branch -M main
 git push -u origin main
 
 echo ""
-echo "Done. Enable GitHub Pages if not already:"
+echo "Enable GitHub Pages if not already:"
 echo "  1. Open https://github.com/${GITHUB_USER}/${REPO}/settings/pages"
 echo "  2. Source → GitHub Actions"
 echo ""
 echo "After the deploy workflow finishes, visit:"
-echo "  https://${GITHUB_USER}.github.io"
+echo "  https://${GITHUB_USER}.github.io/${REPO}/"
