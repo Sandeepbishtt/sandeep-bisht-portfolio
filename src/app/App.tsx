@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 
 const HERO_NAME = "Sandeep Bisht";
+const HERO_IMAGE_URL = `${import.meta.env.BASE_URL}hero-background.png`;
 const TWITTER_URL = "https://x.com/Sandeep07594432";
 const TWITTER_HANDLE = "@Sandeep07594432";
 
@@ -270,7 +271,7 @@ export default function App() {
             className="relative w-full max-w-xl mx-auto lg:max-w-none lg:ml-auto"
           >
             <img
-              src="/hero-background.png"
+              src={HERO_IMAGE_URL}
               alt="Sandeep Bisht — Software Development Engineer III portfolio portrait"
               width={800}
               height={800}
