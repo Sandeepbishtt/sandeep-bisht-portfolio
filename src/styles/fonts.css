@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Experience section — distinct typography for ScrollStack cards */
+.experience-section {
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.experience-section-heading {
+  font-family: 'Space Grotesk', 'Montserrat', 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.experience-section-subtitle,
+.experience-card-meta,
+.experience-card-list {
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+}
+
+.experience-card-title {
+  font-family: 'Space Grotesk', 'Montserrat', 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.015em;
+}
+
+.experience-card-role {
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+}
+
+.experience-stack-card.scroll-stack-card-surface {
+  height: auto;
+  min-height: 20rem;
+  padding: 2rem 2.5rem;
+  border-radius: 1.75rem;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .experience-stack-card.scroll-stack-card-surface {
+    min-height: 22rem;
+    padding: 2.5rem 3rem;
+  }
+}
+
+.experience-scroll-stack.scroll-stack-scroller--window .scroll-stack-inner {
+  padding-bottom: 22vh;
+}
+
+@media (max-width: 768px) {
+  .experience-scroll-stack.scroll-stack-scroller--window .scroll-stack-inner {
+    padding-bottom: 18vh;
+  }
+}
