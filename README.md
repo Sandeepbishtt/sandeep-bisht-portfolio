@@ -27,18 +27,22 @@ This repo includes [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml
 
 ### One-time setup
 
-1. **Create the repo** on GitHub named exactly `Sandeepbishtt.github.io` (public).
+1. **Log in to GitHub CLI** (one time):
+   ```bash
+   gh auth login
+   ```
 
-2. **Push this project:**
+2. **Publish** from the project root:
+   ```bash
+   ./scripts/publish-to-github.sh
+   ```
+   This creates [`Sandeepbishtt.github.io`](https://github.com/Sandeepbishtt/Sandeepbishtt.github.io) and pushes `main`.
+
+   Or manually:
    ```bash
    git remote add origin git@github.com:Sandeepbishtt/Sandeepbishtt.github.io.git
    git branch -M main
    git push -u origin main
-   ```
-   Or with HTTPS + GitHub CLI:
-   ```bash
-   gh auth login
-   gh repo create Sandeepbishtt.github.io --public --source=. --remote=origin --push
    ```
 
 3. **Enable Pages:** Repo **Settings → Pages → Build and deployment → Source:** select **GitHub Actions**.
